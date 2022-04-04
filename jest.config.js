@@ -1,8 +1,9 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  preset: 'ts-jest',
+  transform: {
+    "^.+\\.tsx?$": "esbuild-jest",
+  },
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.ts', '!**/*.d.ts'],
-  testEnvironment: 'node',
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/']
+  collectCoverageFrom: ["src/**/*.ts", "!**/*.d.ts"],
+  testEnvironment: "node",
 };
